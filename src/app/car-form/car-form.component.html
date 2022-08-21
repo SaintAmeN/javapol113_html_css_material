@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-title>Tytuł Formularza</mat-card-title>
+  <mat-card-subtitle>Formularz samochodu</mat-card-subtitle>
+  <mat-card-content class="form-container">
+    <mat-form-field appearance="legacy">
+      <mat-label>Model:</mat-label>
+      <input type="text" matInput placeholder="Model:">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Make:</mat-label>
+      <mat-select>
+        <mat-option value="BMW">BMW</mat-option>
+        <mat-option value="VW">Volkswagen</mat-option>
+        <mat-option value="MAZDA">Mazda</mat-option>
+        <mat-option value="RENAULT">Renault</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Engine power:</mat-label>
+      <input type="number" matInput placeholder="Engine power:">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Production year:</mat-label>
+      <input type="number" matInput placeholder="Production year:">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Date of first registration:</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <div class="button-row">
+      <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary" >Student Form</button>
+      <button class="mat-button-primary" type="button" mat-button mat-raised-button color="warn" >Student Form</button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
