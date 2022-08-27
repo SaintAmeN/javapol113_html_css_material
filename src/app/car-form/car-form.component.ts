@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CarModel } from '../model/car';
 
 
@@ -16,6 +16,7 @@ const DEFAULT_CAR_VALUES = {
   styleUrls: ['./car-form.component.css']
 })
 export class CarFormComponent implements OnInit {
+  @Output() onCarAdd: EventEmitter<CarModel> = new EventEmitter()
   carForm: CarModel;
 
   constructor() {
@@ -32,6 +33,7 @@ export class CarFormComponent implements OnInit {
   clickSubmit(): void {
     console.log('Submit: ')
     console.log(this.carForm)
+    this.onCarAdd.emit(this.carForm)
   }
 
   clickClear(): void {
