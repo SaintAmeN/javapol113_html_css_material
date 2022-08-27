@@ -9,7 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import {MatNativeDateModule} from '@angular/material/core';
+import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -22,6 +22,7 @@ import { AppComponent } from './app.component';
 import { CarFormComponent } from './car-form/car-form.component';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarModelFactory } from './model/car';
+import { CarService } from './car-service/car.service';
 
 @NgModule({
   declarations: [
@@ -46,9 +47,14 @@ import { CarModelFactory } from './model/car';
     MatDatepickerModule,
     ReactiveFormsModule,
     MatNativeDateModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
-  providers: [CarModelFactory],
+  providers: [
+    CarModelFactory,
+    CarService,
+    // i18n (internationalization) (wybór języka na UI)
+    // {provide: MAT_DATE_LOCALE, useValue: 'pl-PL'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

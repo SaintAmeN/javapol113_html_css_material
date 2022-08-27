@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { CarModel, CarModelFactory } from '../model/car';
+import { Component, OnInit } from '@angular/core';
+import { CarService } from '../car-service/car.service';
+import { CarModel } from '../model/car';
 
 @Component({
   selector: 'app-car-list',
@@ -8,19 +8,23 @@ import { CarModel, CarModelFactory } from '../model/car';
   styleUrls: ['./car-list.component.css']
 })
 export class CarListComponent implements OnInit {
-  @Input() carList: CarModel[] = [];
 
   displayedColumns: string[] = [
     'model-x',
     'make',
     'enginePower',
     'productionYear',
-    'dateOfFirstRegistration'
+    'dateOfFirstRegistration',
+    'del-button-column'
   ];
 
-  constructor() {
+  constructor(public carService : CarService) {
   }
 
   ngOnInit(): void {
+  }
+
+  deleteFromList(carToDelete : CarModel): void {
+    this.carService.deleteCarFromList(carToDelete)
   }
 }

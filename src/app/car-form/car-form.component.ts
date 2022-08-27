@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CarService } from '../car-service/car.service';
 import { CarModel } from '../model/car';
 
 
@@ -16,10 +17,9 @@ const DEFAULT_CAR_VALUES = {
   styleUrls: ['./car-form.component.css']
 })
 export class CarFormComponent implements OnInit {
-  @Output() onCarAdd: EventEmitter<CarModel> = new EventEmitter()
   carForm: CarModel;
 
-  constructor() {
+  constructor(private carService : CarService) {
     this.carForm = Object.assign({}, DEFAULT_CAR_VALUES)
   }
 
@@ -31,9 +31,15 @@ export class CarFormComponent implements OnInit {
   }
 
   clickSubmit(): void {
+    console.log(JSON.stringify(this.carForm.dateOfFirstRegistration))
+    console.log(this.carForm.dateOfFirstRegistration)
     console.log('Submit: ')
     console.log(this.carForm)
-    this.onCarAdd.emit(this.carForm)
+    this.carService.addCarToList(this.carForm)
+
+    // wyczyszczenie formularza poprzez
+    // podstawienie tam nowego obiektu
+    this.assignDefaultFormValues()
   }
 
   clickClear(): void {
