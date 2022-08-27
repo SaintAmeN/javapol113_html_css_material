@@ -20,11 +20,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CarFormComponent } from './car-form/car-form.component';
+import { CarListComponent } from './car-list/car-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarFormComponent
+    CarFormComponent,
+    CarListComponent
   ],
   imports: [
     BrowserModule,
