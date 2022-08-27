@@ -3,19 +3,34 @@
   width: 80%;
 }
 
+.top-row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
 .header-col-left{
+  width: 25%;
   background-color: #899878;
   border-right: solid 1px #B7BF9E;
   border-left: solid 1px #B7BF9E;
 }
 
 .header-col-right{
+  width: 75%;
   background-color: #E4E6C3;
   border-right: solid 1px #B7BF9E;
   border-left: solid 1px #B7BF9E;
 }
 
 .navigator-style{
+  width: 25%;
   background-color: #E4E6C3;
   border-right: solid 1px #B7BF9E;
   border-left: solid 1px #B7BF9E;
@@ -63,6 +78,7 @@
 }
 
 .content-style{
+  width: 75%;
   background-color: #E4E6C3;
   border-right: solid 1px #B7BF9E;
   border-left: solid 1px #B7BF9E;
