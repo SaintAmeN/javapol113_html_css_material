@@ -68,6 +68,13 @@
   border-left: solid 1px #B7BF9E;
 }
 
+.content-container{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .menu-title{
   text-align: center;
   border-bottom: 1px solid #B7BF9E;

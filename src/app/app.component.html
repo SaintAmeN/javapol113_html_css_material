@@ -1,26 +1,37 @@
 <div class="app-container">
-<mat-grid-list cols="4" rowHeight="24px">
-  <mat-grid-tile class="header-col-left" colspan="1">Logo</mat-grid-tile>
-  <mat-grid-tile class="header-col-right" colspan="3">
+  <mat-grid-list cols="4" rowHeight="24px">
+    <mat-grid-tile class="header-col-left" colspan="1">Logo</mat-grid-tile>
+    <mat-grid-tile class="header-col-right" colspan="3">
 
-  </mat-grid-tile>
-</mat-grid-list>
-<mat-grid-list cols="4" rowHeight="1:3">
-  <mat-grid-tile class="navigator-style" colspan="1">
-    <div class="menu-container">
-      <div class="menu-title">
-        Menu
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="4" rowHeight="1:3">
+    <mat-grid-tile class="navigator-style" colspan="1">
+      <div class="menu-container">
+        <div class="menu-title">
+          Menu
+        </div>
+        <div class="menu-buttons-container">
+          <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary">Main
+            Page</button>
+          <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary">List of
+            Students</button>
+          <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary">Student
+            Form</button>
+          <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary">Login
+            Page</button>
+        </div>
       </div>
-      <div class="menu-buttons-container">
-        <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary" >Main Page</button>
-        <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary" >List of Students</button>
-        <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary" >Student Form</button>
-        <button class="mat-button-primary" type="button" mat-button mat-raised-button color="primary" >Login Page</button>
+    </mat-grid-tile>
+    <mat-grid-tile class="content-style" colspan="3">
+      <div class="content-container">
+        <div>
+          <app-car-form></app-car-form>
+        </div>
+        <div>
+          <app-car-list></app-car-list>
+        </div>
       </div>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile class="content-style" colspan="3">
-    <app-car-form></app-car-form>
-  </mat-grid-tile>
-</mat-grid-list>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
