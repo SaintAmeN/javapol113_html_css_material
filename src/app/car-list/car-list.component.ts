@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { CarModel, CarModelFactory } from '../model/car';
 
 @Component({
@@ -7,7 +8,7 @@ import { CarModel, CarModelFactory } from '../model/car';
   styleUrls: ['./car-list.component.css']
 })
 export class CarListComponent implements OnInit {
-  @Input() carList: CarModel[];
+  @Input() carList: CarModel[] = [];
 
   displayedColumns: string[] = [
     'model-x',
@@ -18,7 +19,6 @@ export class CarListComponent implements OnInit {
   ];
 
   constructor() {
-    this.carList = []
   }
 
   ngOnInit(): void {
