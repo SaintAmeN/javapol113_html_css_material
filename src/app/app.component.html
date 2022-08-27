@@ -27,7 +27,7 @@
           <app-car-form (onCarAdd)="addCarToList($event)"></app-car-form>
         </div>
         <div>
-          <app-car-list [carList]="carList"></app-car-list>
+          <app-car-list (onCarDeleted)="deleteCarFromList($event)" [carList]="carList"></app-car-list>
         </div>
       </div>
     </div>

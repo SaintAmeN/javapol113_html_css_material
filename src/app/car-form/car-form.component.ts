@@ -34,6 +34,10 @@ export class CarFormComponent implements OnInit {
     console.log('Submit: ')
     console.log(this.carForm)
     this.onCarAdd.emit(this.carForm)
+
+    // wyczyszczenie formularza poprzez
+    // podstawienie tam nowego obiektu
+    this.assignDefaultFormValues()
   }
 
   clickClear(): void {

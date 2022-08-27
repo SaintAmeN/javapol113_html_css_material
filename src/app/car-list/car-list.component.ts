@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CarModel, CarModelFactory } from '../model/car';
 
 @Component({
@@ -9,18 +8,24 @@ import { CarModel, CarModelFactory } from '../model/car';
 })
 export class CarListComponent implements OnInit {
   @Input() carList: CarModel[] = [];
+  @Output() onCarDeleted: EventEmitter<CarModel> = new EventEmitter()
 
   displayedColumns: string[] = [
     'model-x',
     'make',
     'enginePower',
     'productionYear',
-    'dateOfFirstRegistration'
+    'dateOfFirstRegistration',
+    'del-button-column'
   ];
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  deleteFromList(carToDelete : CarModel): void {
+    this.onCarDeleted.emit(carToDelete)
   }
 }
