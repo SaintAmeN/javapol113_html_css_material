@@ -21,12 +21,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { CarFormComponent } from './car-form/car-form.component';
 import { CarListComponent } from './car-list/car-list.component';
+import { CarModelFactory } from './model/car';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarFormComponent,
-    CarListComponent
+    CarListComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,7 @@ import { CarListComponent } from './car-list/car-list.component';
     MatNativeDateModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CarModelFactory],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

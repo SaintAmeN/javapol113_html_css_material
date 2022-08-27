@@ -2,7 +2,7 @@
   <mat-card-title>Car List</mat-card-title>
   <mat-card-subtitle>List of available cars</mat-card-subtitle>
   <mat-card-content class="list-container">
-    <table mat-table class="mat-elevation-z2 car-table-style">
+    <table mat-table [dataSource]="carList" class="mat-elevation-z2 car-table-style">
 
       <ng-container matColumnDef="model-x">
         <th mat-header-cell *matHeaderCellDef>Model</th>

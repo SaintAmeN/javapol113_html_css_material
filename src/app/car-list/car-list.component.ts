@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarModel } from '../model/car';
+import { CarModel, CarModelFactory } from '../model/car';
 
 @Component({
   selector: 'app-car-list',
@@ -16,11 +16,13 @@ export class CarListComponent implements OnInit {
     'dateOfFirstRegistration'
   ];
 
-  constructor() {
-    this.carList = []
+  constructor(public carFactory : CarModelFactory) {
+    this.carList = [
+      this.carFactory.CreateDefaultCarModel(),
+      this.carFactory.CreateCarModel('Some model', 'Some make'),
+    ]
   }
 
   ngOnInit(): void {
   }
-
 }
